@@ -10,7 +10,7 @@ trait Logger {
 }
 
 trait LoggProcessing extends FooService{
-  def log(message:String):Unit
+  override def log(message:String):Unit
 
   override def process:Unit={
     log("Starting processing")

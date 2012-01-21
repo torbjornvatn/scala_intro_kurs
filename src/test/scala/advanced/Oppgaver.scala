@@ -1,3 +1,5 @@
+package advanced
+
 import org.scalatest.Spec
 import org.scalatest.matchers.ShouldMatchers
 
@@ -7,7 +9,7 @@ class Oppgaver extends Spec with ShouldMatchers {
 
   describe("Oppgaver - ") {
 
-    val tallFra1Til10 = Range(1, 10)
+    val tallFra1Til10 = 1 to 10
 
     describe("oppgave 1 - looping ") {
 
@@ -22,7 +24,7 @@ class Oppgaver extends Spec with ShouldMatchers {
 
       ignore("funksjonelt") {
 
-        val i = 0 //loop over tallFra1Til10 imperativt
+        val i = 0 //loop over tallFra1Til10 funksjonelt
 
         i should be(10)
         
@@ -158,17 +160,17 @@ class Oppgaver extends Spec with ShouldMatchers {
       }
 
       ignore("kopier en person inn i en annen variabel (egentlig ikke en case class greie)") {
-        val person1: navnOgAlder = null
-        val person2: navnOgAlder = null
+        val person1: NavnOgAlder = null
+        val person2: NavnOgAlder = null
 
         person1 should not be theSameInstanceAs(person2)
 
         skal_ha_samme_navn_og_alder(person1, person2)
 
 
-        type navnOgAlder = {val navn: String; val alder: Int}
+        type NavnOgAlder = {val navn: String; val alder: Int}
 
-        def skal_ha_samme_navn_og_alder(a: navnOgAlder, b: navnOgAlder) = {
+        def skal_ha_samme_navn_og_alder(a: NavnOgAlder, b: NavnOgAlder) = {
           a.navn should equal(b.navn)
           a.alder should equal(b.alder)
         }
