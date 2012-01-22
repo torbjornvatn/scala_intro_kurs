@@ -1,9 +1,8 @@
 package test
 
-class Person(
-              navn: String,
-              etternavn: String,
-              alder: Int) {
+class Person(navn: String,
+             etternavn: String,
+             alder: Int) {
   val interesser = List("ting", "og", "tang")
   val cv = "%s %s -- %s\n Liker: %s".format(navn, etternavn, alder, interesser.mkString(";"))
 
@@ -50,21 +49,23 @@ class App {
 
 
 object Logger{
-  def error(msg:String) = println ("ÆÆÆ! : " + msg)
+  def error(msg:String) {
+    println ("ÆÆÆ! : " + msg)
+  }
 }
 
 trait Loggable{
-  def error(msg: String) = Logger.error(msg)
+  def error(msg: String) {
+    Logger.error(msg)
+  }
 }
 
 class ServiceA extends Loggable{  }
 class ServiceB extends Loggable{  }
 
-
-
   val list = List(1,2,3)
   list(0) == 1 //samme som list.apply(0)
 
-  val to = 1 + 1 // sammen som 1.+(1)
+/**/  val to = 1 + 1 // sammen som 1.+(1)
 
 }

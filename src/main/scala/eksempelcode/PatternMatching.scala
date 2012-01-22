@@ -1,11 +1,9 @@
 package eksempelcode
 
-case class Farge(val navn:String)
+case class Bil(farge: Farge, hjul: Int)
 
-case class Bil(val farge:Farge, val hjul:Int)
-
-object PatternMatcingApp extends Application{
-  def godkjenntBil(dings: AnyRef)={
+object PatternMatcingApp extends App {
+  def godkjenntBil(dings: AnyRef) {
     dings match {
       case Bil(_, hjul) if hjul <= 2 => println("En slik bil heter gjerne motorsykkel")
       case Bil(_, 4) => println("helt vanelig bil")
@@ -15,4 +13,5 @@ object PatternMatcingApp extends Application{
       case _ => println("dette kan være hva som helst uten om en bil")
     }
   }
+  godkjenntBil(Bil(Farge("rød"), 4))
 }
