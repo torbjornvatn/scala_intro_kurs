@@ -3,8 +3,6 @@ package start.oppgaver
 import org.scalatest.Spec
 import org.scalatest.matchers.ShouldMatchers
 
-import model._
-
 class OperatorOverload extends Spec with ShouldMatchers {
   describe("Operator overload -- +") {
 

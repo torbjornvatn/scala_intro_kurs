@@ -2,8 +2,8 @@ package advanced
 
 import org.scalatest.Spec
 import org.scalatest.matchers.ShouldMatchers
+import eksempelcode._
 
-import eksempeldata._
 
 class Oppgaver extends Spec with ShouldMatchers {
 
