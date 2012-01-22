@@ -1,32 +1,32 @@
 package eksempelcode
 
-
 trait HealthCheckable{
   def isOk: Boolean
 }
 
 trait Logger {
-  def log(message: String):Unit = println(message)
+  def log(message: String){
+   println(message)
+  }
 }
 
 trait LoggProcessing extends FooService{
-  override def log(message:String):Unit
-
-  override def process:Unit={
+  override def process() {
     log("Starting processing")
-    super.process
+    super.process()
     log("Stopped processing")
   }
 }
 
-class FooService extends HealthCheckable with Logger{
-  def isOk:Boolean = true
+class FooService extends HealthCheckable with Logger {
+  def isOk: Boolean = true
 
-  def process = {
-    //go allot!
+  def process() {
+    println("Processing!!")
   }
 }
 
-object TraitsApp extends Application{
-  new FooService with LoggProcessing
+object TraitsApp extends App {
+  val service = new FooService with LoggProcessing
+  service.process()
 }
