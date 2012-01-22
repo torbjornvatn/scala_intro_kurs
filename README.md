@@ -6,6 +6,7 @@ Scala introkurs
 
 1. Du trenger SBT 0.11.x
 	- For dere med Mac er det enklest å installere via [homebrew](http://mxcl.github.com/homebrew/) 
+	- Hvis du ikke har Mac les [her](https://github.com/harrah/xsbt/wiki/Getting-Started-Setup) 
 	- ***brew install sbt***
 2. Du trenger git
 	- Også enklest å installere med homebrew 
