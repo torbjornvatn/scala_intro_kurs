@@ -3,13 +3,15 @@ package start.oppgaver
 import org.scalatest.Spec
 import org.scalatest.matchers.ShouldMatchers
 
-import model._
-
 class ProgrammeringsStil extends Spec with ShouldMatchers {
+
   describe("Programmerings stil") {
+
     val liste = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     val summenAvListen = 55
+
     describe("Imperativ -- ") {
+
       ignore("konkatiner alle elementene i listen") {
         var alle = ""
 
@@ -30,7 +32,8 @@ class ProgrammeringsStil extends Spec with ShouldMatchers {
     }
 
     describe("Funksjonell -- ") {
-      ignore("skriv ut alle elementene i listen") {
+
+      ignore("konkatiner listen") {
         var alle = ""
         // i første forsøk, behold var
         // -- fyll inn

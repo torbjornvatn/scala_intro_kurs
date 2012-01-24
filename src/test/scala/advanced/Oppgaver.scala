@@ -1,7 +1,7 @@
 package advanced
 
 import org.scalatest.Spec
-import org.scalatest.matchers.ShouldMatchers
+import org.scalatest.matchers._
 import eksempelcode._
 
 
@@ -13,20 +13,20 @@ class Oppgaver extends Spec with ShouldMatchers {
 
     describe("oppgave 1 - looping ") {
 
-      ignore("imperativt") {
-        var i = 0
+      ignore("imperativ looping") {
+        var sum = 0
 
-        //loop over tallFra1Til10 med en for løkke
+        //loop over tallFra1Til10 med en for løkke og summer
 
-        i should be(10)
+        sum should be(55)
         
       }
 
-      ignore("funksjonelt") {
+      ignore("funksjonel looping") {
 
-        val i = 0 //loop over tallFra1Til10 funksjonelt
+        val sum = 0 //loop over tallFra1Til10 funksjonelt og summer
 
-        i should be(10)
+        sum should be(55)
         
       }
 
@@ -52,7 +52,8 @@ class Oppgaver extends Spec with ShouldMatchers {
         
       }
 
-      ignore("konkatinasjon") {
+      ignore("konkatinering") {
+
         val liste1 = EksempelData.liste1
         val liste2 = EksempelData.liste2
 
@@ -73,7 +74,7 @@ class Oppgaver extends Spec with ShouldMatchers {
         
       }
 
-      ignore("finn alle oddetal") {
+      ignore("finn alle oddetall") {
         val tall = EksempelData.tallFraEnTilFem
 
         val oddeTall = Nil
@@ -83,14 +84,13 @@ class Oppgaver extends Spec with ShouldMatchers {
       }
     }
 
-
     describe("oppgave 3 - tupler") {
 
       ignore("lag en tuple med to verdier") {
-        var tuple: Tuple2[Int, Int] = null
-
         val forsteVerdi = 1
         val andreVerdi = 2
+        
+        val tuple: Tuple2[Int, Int] = null
 
         tuple._1 should be(1)
         tuple._2 should be(2)
@@ -102,17 +102,15 @@ class Oppgaver extends Spec with ShouldMatchers {
 
         val en, to = multipleReturn
 
-
         en should be(1)
         to should be(2)
         
       }
 
       ignore("populer en HashMap ved hjelp av tupler ") {
-        import scala.collection.mutable.HashMap
-        val map = new HashMap[String, Int]()
+        val map = Map.empty[String, Int]
 
-        //legg til de manglende elementer
+        //Bytt ut Map.empty med en Map populert vha tupler
 
         map("en") should be(1)
         map("to") should be(2)
@@ -133,10 +131,10 @@ class Oppgaver extends Spec with ShouldMatchers {
       ignore("lag en person") {
         val person = null
 
-        person_har_navn_og_alder(person)
+//        person_har_navn_og_alder(person) //Kommenter inn og få den til å kjøre
 
-        def person_har_navn_og_alder(person: {val navn: String; val alder: Int}) = {
-          person should not be (null)
+        def person_har_navn_og_alder(person: {val navn: String; val alder: Int}) { // Dette er et eksempel på structual typing
+          person should not be equal(null)
           person.navn should not be ('empty)
           person.alder should be > 0
         }
@@ -160,8 +158,8 @@ class Oppgaver extends Spec with ShouldMatchers {
       }
 
       ignore("kopier en person inn i en annen variabel (egentlig ikke en case class greie)") {
-        val person1: NavnOgAlder = null
-        val person2: NavnOgAlder = null
+        val person1: NavnOgAlder = null.asInstanceOf[NavnOgAlder]
+        val person2: NavnOgAlder = null.asInstanceOf[NavnOgAlder]
 
         person1 should not be theSameInstanceAs(person2)
 
@@ -202,7 +200,7 @@ class Oppgaver extends Spec with ShouldMatchers {
 
     }
 
-    describe("oppgave 6 - traignores") {
+    describe("oppgave 6 - traits") {
 
       ignore("Finn den største bukkene bruse") {
         val bukkene = EksempelData.bukkeneBruse
@@ -218,7 +216,7 @@ class Oppgaver extends Spec with ShouldMatchers {
 
         val enBukk = null
 
-        // Mix inn "interface"-traignoreet Tramping
+        // Mix inn "interface"-traitet Tramping
 
         // kommenteres inn
         // enBukk.trampe should be ("Tramp tramp!")
@@ -243,10 +241,7 @@ class Oppgaver extends Spec with ShouldMatchers {
 
         killing.siMæ should be ("meeee")
         
-
       }
-
     }
-
   }
 }

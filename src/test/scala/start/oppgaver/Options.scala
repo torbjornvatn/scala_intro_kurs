@@ -5,18 +5,20 @@ import org.scalatest.matchers.ShouldMatchers
 
 class Options extends Spec with ShouldMatchers {
   describe("Options") {
+
     val team = List("Egon", "Benny", "Kjell")
+
     ignore("skal returnere at vi ikke har det elementet"){
-      def teamMedlem(navn:String) = null
+      def teamMedlem(navn: String): Option[String] = null.asInstanceOf[Option[String]]
       val element = teamMedlem("Anders")
 
-      /*element match {
+      element match {
         case None => "pass"
-        case _ => fail
-      }*/
+        case _ => fail()
+      }
     }
 
-    ignore("skal returnere (ingen) eller navnet på medlemen"){
+    ignore("skal returnere (ingen) eller navnet på medlemmet"){
       val benny = Some("Benny")
       val valborg = None
 

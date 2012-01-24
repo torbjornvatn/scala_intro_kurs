@@ -7,10 +7,10 @@ class OperatorOverload extends Spec with ShouldMatchers {
   describe("Operator overload -- +") {
 
     class Henger(val vekt: Int)
-    class LasteBil(val vekt: Int)
+    class Lastebil(val vekt: Int)
 
     ignore("regn total vekt på bil pluss henger") {
-      val bil = new LasteBil(4000)
+      val bil = new Lastebil(4000)
       val henger = new Henger(3000)
 
       val totalvekt: Int = 0 //henger + bil  -- fyll inn
