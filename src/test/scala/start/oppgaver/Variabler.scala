@@ -6,9 +6,9 @@ import org.scalatest.matchers.ShouldMatchers
 class Variabler extends Spec with ShouldMatchers {
   describe("Variabler") {
 
-    ignore("definere en string variabel") {
-      val enStreng = 2 // -- fyll inn
-      //      enStreng.isInstanceOf[String] should be (true)
+    ignore("definere en string-variabel") {
+      val enStreng = AnyRef // -- fyll inn
+      enStreng.isInstanceOf[String] should be (true)
     }
 
     ignore("definer en variabel som kan endre seg") {
